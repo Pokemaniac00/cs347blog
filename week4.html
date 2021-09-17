@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="week4.css">
+    <link rel="shortcut icon" href="http://jazzcoding.me/Pizza-Website/images/pacmanpizza.ico">
+    <title>Aric Flor's CS347 Blog</title>
+</head>
+
+<body>
+    <header>
+        <h1>Aric Flor's CS347 Blog</h1>
+        <center><img class="photo" src="http://jazzcoding.me/Pizza-Website/images/pacmanpizza.jpeg"></center>
+        <h3>Week 4: 09/10/2021 - 09/17/2021</h3>
+    </header>
+    <main>
+        <p></p>
+        <div class="container">
+            <div class="left">
+                <div class="text">
+                    <p>
+                        This week, I learned about Flexbox and how it can be used tp format containers and objects in
+                        web pages. For this week's blog entry, I was curious on how to make text appear in reverse,
+                        as the topic of right-to-left languages was brought up in class. While I am not trying to
+                        reverse the order of the words, I am reversing the order of the characters appearing in each line of this
+                        text box.
+                    </p>
+                    <p>
+                        This reminds me of the movie Tenet! Its named after the Sator Square puzzle (which is
+                        mentioned throughout the film) where reading the puzzle from the beginning reads the same way
+                        as if you read it from the end.
+                    </p>
+                    <p>
+                        Code that allowed me to do this was found from <a
+                            href="https://stackoverflow.com/a/12180034">Stack Overflow</a>
+                        and described how to use the following unicode encoding tags in HTML to override right-to-left
+                        (&/#x202e;) and left-to-right (&/#x202d;) control (ignore the "/"). Notice that I have duplicated
+                        the text from this container to the one opposite this page, but the text is reversed!
+                    </p>
+                </div>
+            </div>
+            <div class="center">
+                <img
+                    src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.flickeringmyth.com%2Fwp-content%2Fuploads%2F2020%2F07%2FTenet-Poster-2-1.jpeg&f=1&nofb=1">
+            </div>
+            <div class="right">
+                <div class="text">
+                    <p>
+                        &#x202e;This week, I learned about Flexbox and how it can be used tp format containers and
+                        objects in
+                        web pages. For this week's blog entry, I was curious on how to make text appear in reverse,
+                        as the topic of right-to-left languages was brought up in class. While I am not trying to
+                        reverse the order of the words, I am reversing the order of the characters appearing in each line of this
+                        text box.&#x202d;
+                    </p>
+                    <p>
+                        &#x202e;This reminds me of the movie Tenet! Its named after the Sator Square puzzle (which is
+                        mentioned throughout the film) where reading the puzzle from the beginning reads the same way
+                        as if you read it from the end.
+                        &#x202d;
+                    </p>
+                    <p>
+                        &#x202e;Code that allowed me to do this was found from <a
+                            href="https://stackoverflow.com/a/12180034">Stack Overflow</a>
+                        and described how to use the following unicode encoding tags in HTML to override right-to-left
+                        (&/#x202e;) and left-to-right (&/#x202d;) control (ignore the "/"). Notice that I have duplicated
+                        the text from this container to the one opposite this page, but the text is reversed!
+                        &#x202d;
+                    </p>
+                </div>
+            </div>
+    </main>
+</body>
+
+</html>

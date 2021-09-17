@@ -1,0 +1,13 @@
+@import "week3.css";
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.center > img {
+    height: 65%;
+    width: 65%;
+}
