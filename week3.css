@@ -4,6 +4,8 @@
     box-shadow: inset 0 0 7px darkgray;
     border-radius: 5px;
     padding: 5px;
+    margin: 0 auto;
+    max-width: 800px;
 }
 
 .demo {
