@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="week5.css">
+    <link rel="shortcut icon" href="http://jazzcoding.me/Pizza-Website/images/pacmanpizza.ico">
+    <title>Aric Flor's CS347 Blog</title>
+</head>
+
+<body>
+    <header>
+        <h1>Aric Flor's CS347 Blog</h1>
+        <center><img class="photo" src="http://jazzcoding.me/Pizza-Website/images/pacmanpizza.jpeg"></center>
+        <h3>Week 5: 09/17/2021 - 09/24/2021</h3>
+    </header>
+    <main>
+        <div class="moving">
+        </div>
+        <div class="text">
+            <p>
+                This week, since the Programming Assignment involves including at least one animation, I decided to
+                research CSS animations to include an animation in this weeks blog post. As you can see, I have created
+                a square div that rotates and travels around the page in a rectangular pattern using the code below.
+            </p>
+            <pre>
+                <code>
+.moving {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: absolute;
+    animation-name: animation;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+@keyframes animation {
+    0%   {background-color:red; left:10%; top:10%; transform:rotate(720deg); }
+    25%  {background-color:yellow; left:90%; top:10%;}
+    50%  {background-color:blue; left:90%; top:90%; }
+    75%  {background-color:green; left:10%; top:90%; }
+    100% {background-color:red; left:10%; top:10%; }
+}
+                </code>
+            </pre>
+            <p>
+                I can create a keyframe named "animation" that I can use in the css class ".moving" to run the animation
+                infinitely in 10s increments. The <code>transform:rotate(720deg);</code> attribute tells the rotate animation
+                to start. The animation can also be separated by percentages {0%, 25%, 50%, 75%, 100%} to be able to define
+                where the object should be in certain key frames.
+
+                This code was adapted from the following articles: 
+                <a href="https://www.w3schools.com/css/css3_animations.asp">https://www.w3schools.com/css/css3_animations.asp</a> &
+                <a href="https://jsfiddle.net/gionaf/Ugc5g/">https://jsfiddle.net/gionaf/Ugc5g/</a>. 
+            </p>
+        </div>
+    </main>
+</body>
+
+</html>
