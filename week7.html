@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="week5.css">
+    <link rel="shortcut icon" href="http://jazzcoding.me/Pizza-Website/images/pacmanpizza.ico">
+    <title>Aric Flor's CS347 Blog</title>
+</head>
+
+<body>
+    <header>
+        <h1>Aric Flor's CS347 Blog</h1>
+        <center><img class="photo" src="http://jazzcoding.me/Pizza-Website/images/pacmanpizza.jpeg"></center>
+        <h3>Week 7: 10/01/2021 - 10/08/2021</h3>
+    </header>
+    <main>
+        <div class="text">
+            <p>
+                This week, I wanted to create a way for my blog site to also be accessed over the TOR network using the
+                Tor Browser. This would provide layers of anonymity for both the webhost and for the user accessing the
+                website. However, I was unable to fully complete this research in the way I wanted to. Maybe I will
+                write more about this next week? (If you want to try accessing it anyway using Tor Browser or Brave
+                Web Browser with Tor, the link is here: <a
+                    href="http://7dbg56vfocskmwsn5atwlqbsitgl4lfis5xveustoq66vm6nnj4kk7yd.onion">
+                    http://7dbg56vfocskmwsn5atwlqbsitgl4lfis5xveustoq66vm6nnj4kk7yd.onion</a>)
+            </p>
+            <p>
+                Instead, I decided to go for a simple JS program that counts the number of vowels in an input text box,
+                using the javascript code below. I was inspired on making a simple JS program since we were recently
+                introduced to JS. A second inspiration was in this <a href="https://youtu.be/roumzWd4XJU">youtube
+                    video</a>. To accomplish this task in a minimum amount of lines, I researched how to use regular
+                expressions in javascript. I used a regular expression <code>/[aeiou]/gi</code> to create an array
+                of case insensitive vowels in a string. I then return the length and alert the page with the number
+                of vowels.
+            </p>
+
+            <input id="vowels">
+            <button id="count" onclick="getInput()">Count vowels!</button>
+            <script src="week7.js"></script>
+            <pre>
+                <code>
+function getInput() {
+    let text = document.getElementById("vowels").value;
+    const count = text.match(/[aeiou]/gi).length;
+    alert(count);
+} 
+                </code>
+            </pre>
+        </div>
+    </main>
+</body>
+
+</html>
