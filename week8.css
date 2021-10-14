@@ -1,0 +1,11 @@
+@import "week5.css";
+
+.paragraph {
+    cursor: pointer;
+}
+
+#thatsPrettyGood {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+}
