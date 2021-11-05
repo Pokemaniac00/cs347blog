@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="week5.css">
+    <link rel="shortcut icon" href="http://jazzcoding.me/Pizza-Website/images/pacmanpizza.ico">
+    <title>Aric Flor's CS347 Blog</title>
+</head>
+
+<body>
+    <header>
+        <h1>Aric Flor's CS347 Blog</h1>
+        <center><img class="photo" src="http://jazzcoding.me/Pizza-Website/images/pacmanpizza.jpeg"></center>
+        <h3>Week 11: 10/29/2021 - 11/05/2021</h3>
+    </header>
+    <main>
+        <div class="text">
+            <p>
+                This week, I wanted to create a ReactJS program that generated random quotes from a list of quotes and
+                authors. However, I was unable to get the page working correctly, as I had tons of confusion from the
+                ReactJS lab, as well as lack of experience. I will hopefully learn much more in the coming week. I got
+                inspiration from the following page:
+                <a href="https://www.golangprograms.com/react-js-projects-for-beginners/random-quote-generator.html">
+                    https://www.golangprograms.com/react-js-projects-for-beginners/random-quote-generator.html</a>.
+                If I were to demonstrate what I learned from this page that helped with my lack of understanding from
+                class was how states are used for ReactJS code. Take a look at the code sample below. We can observe
+                that this class extends the react component class, and has multiple methods, including an instructor
+                that initializes a state with a quote and an author. The state is then set in handleClick(), also
+                managing states. Quotes would be returned from an array of quotes and authors, selected at random using
+                a random number generator.
+            </p>
+
+            <pre>
+                <code>
+class App extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+        quote: quotes[0].quote,
+        author: quotes[0].author,
+        };
+    }
+    randomQuote() {
+        const randomNumber = Math.floor(Math.random() * quotes.length);
+        return quotes[randomNumber];
+        
+    }
+    shuffleQuotes(array){
+        return array.sort(()=>Math.random()-0.5)
+    }
+    
+    handleClick = () => {
+        const generateRandomQuote = this.randomQuote();
+        this.setState({
+        quote: generateRandomQuote.quote,
+        author: generateRandomQuote.author
+        });
+        this.shuffleQuotes(quotes)
+    };
+    
+    randomColor() {
+        const color = `rgb(
+        ${Math.floor(Math.random() * 155)},
+        ${Math.floor(Math.random() * 155)},
+        ${Math.floor(Math.random() * 155)})`;
+        return color;
+    }
+    
+    render() {
+        return (
+            &lt;div&gt;
+            &lt;QuoteAndAuthor
+            displayColor={this.randomColor}
+            handleClick={this.handleClick}
+            {...this.state}
+            /&gt;
+            &lt;/div&gt;
+        );
+    }
+    }
+                </code>
+            </pre>
+        </div>
+    </main>
+</body>
+
+</html>
