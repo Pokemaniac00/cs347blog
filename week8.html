@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="week8.css">
+    <link rel="shortcut icon" href="http://jazzcoding.me/Pizza-Website/images/pacmanpizza.ico">
+    <title>Aric Flor's CS347 Blog</title>
+</head>
+
+<body>
+    <header>
+        <h1>Aric Flor's CS347 Blog</h1>
+        <center><img class="photo" src="http://jazzcoding.me/Pizza-Website/images/pacmanpizza.jpeg"></center>
+        <h3>Week 8: 10/08/2021 - 10/15/2021</h3>
+    </header>
+    <main>
+        <div class="text">
+            <p>
+                This week, I decided to make a to-do list using javascript. This project was inspired by the github
+                repository <a href="https://github.com/learn-webdevYT/to-do-list">here</a>. I wanted more opportunities
+                to see some of what Javascript has to offer as we venture forward into node.js. One day, I would like to
+                adapt code like this to create a blog where users can make their own posts and register for accounts. I
+                believe that creating a website like that would be a great long-term goal. In the meantime,
+                <a id="thatsPrettyGood">click this text here to make a funny sound!</a>
+            </p>
+            <p>
+                You can add to the list by typing in the input box, then pressing the '+' button. When you press the
+                button, the item is added to the list. Click the item in the list once to cross it off, and click it
+                twice to remove it from the list.
+            </p>
+
+            <input id="input"><button id="add">+</button>
+            <div id="list"> </div>
+            <script src="week8.js"></script>
+            <pre>
+                <code>
+let add = document.getElementById('add');
+let list = document.getElementById('list');
+let input = document.getElementById('input');
+let text = document.getElementById('thatsPrettyGood');
+
+add.addEventListener('click', function() {
+    var paragraph = document.createElement('p');
+    paragraph.classList.add('paragraph');
+    paragraph.innerText = input.value;
+    list.appendChild(paragraph);
+    input.value = '';
+    paragraph.addEventListener('click', function() {
+        paragraph.style.textDecoration = 'line-through';
+    });
+    paragraph.addEventListener('dblclick', function() {
+        list.removeChild(paragraph);
+    });
+});
+
+text.addEventListener('click', function() {
+    var audio = new Audio("hey-thats-pretty-good.mp3");
+    audio.play();
+});
+                </code>
+            </pre>
+</body>
+
+</html>
