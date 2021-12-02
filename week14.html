@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="week5.css">
+    <link rel="shortcut icon" href="http://jazzcoding.me/Pizza-Website/images/pacmanpizza.ico">
+    <title>Aric Flor's CS347 Blog</title>
+</head>
+
+<body>
+    <header>
+        <h1>Aric Flor's CS347 Blog</h1>
+        <center><img class="photo" src="http://jazzcoding.me/Pizza-Website/images/pacmanpizza.jpeg"></center>
+        <h3>Week 14: 11/29/2021 - 12/3/2021</h3>
+    </header>
+    <main>
+        <div class="text">
+            <p>
+                This week, I wanted to explore more of react redux by creating a simple counter app on
+                my droplet at the following url: <a
+                    href="https://counter.jazzcoding.me">https://counter.jazzcoding.me</a>. The code below
+                represents some of how the counter operates.
+            </p>
+            <pre>
+                <code>
+const reducer = (state = 0, action) => {
+    switch (action.type) {
+        case 'INCREMENT': return state + 1;
+        case 'DECREMENT': return state - 1;
+        case 'RESET' : return 0;
+        default: return state;
+    }
+}
+export default reducer;
+
+import React, { Component } from 'react';
+class Counter extends Component {
+   render() {
+      const {counter,increment,decrement,reset} = this.props;
+      return (
+        &lt;div className = "App"&gt;
+            &lt;div&gt;{counter}&lt;/div&gt;
+            &lt;div&gt;
+               &lt;button onClick = {increment}&gt;INCREMENT BY 1&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+               &lt;button onClick = {decrement}&gt;DECREMENT BY 1&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;button onClick = {reset}&gt;RESET&lt;/button&gt;
+         &lt;/div&gt;
+      );
+   }
+}
+export default Counter;
+
+import { connect } from 'react-redux'
+import Counter from '../component/counter'
+import { increment, decrement, reset } from '../actions';
+
+const mapStateToProps = (state) => {
+   return {
+      counter: state
+   };
+};
+const mapDispatchToProps = (dispatch) => {
+   return {
+      increment: () => dispatch(increment()),
+      decrement: () => dispatch(decrement()),
+      reset: () => dispatch(reset())
+   };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Counter);
+                </code>
+            </pre>
+        </div>
+    </main>
+</body>
+
+</html>
